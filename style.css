@@ -1,0 +1,394 @@
+/* --- Variables --- */
+:root {
+    --primary-color: #FF7F50; /* A vibrant orange from the image */
+    --secondary-text-color: #555;
+    --main-text-color: #333;
+    --light-bg-color: #f8f8f8;
+    --dark-grey-text: #666;
+    --white: #fff;
+    --border-radius: 8px;
+    --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--main-text-color);
+    background-color: var(--white);
+    overflow-x: hidden; /* Prevent horizontal scroll from minor overflows */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 15px;
+    color: var(--secondary-text-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-align: center;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.primary-btn:hover {
+    background-color: #e67345; /* Slightly darker orange */
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-light);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.secondary-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-light);
+}
+
+/* --- Reusable Classes --- */
+.highlight {
+    color: var(--primary-color);
+}
+
+.section-description {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+    color: var(--dark-grey-text);
+}
+
+/* --- Header Section --- */
+.header {
+    background-color: var(--white);
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: sticky; /* Keeps header visible on scroll */
+    top: 0;
+    z-index: 1000; /* Ensures header is above other content */
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.navbar ul {
+    display: flex;
+    gap: 30px; /* Space between nav items */
+}
+
+.navbar ul li a {
+    color: var(--main-text-color);
+    font-weight: 500;
+}
+
+.navbar ul li a:hover {
+    color: var(--primary-color);
+}
+
+.sign-up-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.sign-up-btn:hover {
+    background-color: #e67345;
+}
+
+#step-number {
+    background-color: var(--white);
+    color: var(--dark-grey-text);
+    box-shadow: #FF6347;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-right: 20px;
+    flex-shrink: 0; /* Prevent shrinking on smaller screens */
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background-color: var(--light-bg-color);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden; /* Important for background dots/patterns if added */
+}
+
+.hero-section .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    text-align: left;
+    flex-wrap: wrap; /* Allow content to wrap */
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px; /* Ensure it doesn't get too small */
+}
+
+.hero-content h1 {
+    font-size: 3.8em;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.1em;
+    color: var(--dark-grey-text);
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+
+.explore-more {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--dark-grey-text);
+    font-weight: 500;
+}
+
+.explore-more i {
+    margin-left: 5px;
+}
+
+/* --- Services Section --- */
+.services-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.services-section h2 {
+    font-size: 2.5em;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.service-card {
+    background-color: var(--white);
+    padding: 60px 30px 30px 30px; /* Increased top padding for icon overlap */
+    border-radius: var(--border-radius);
+    text-align: center;
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-medium);
+    transition: transform 0.3s ease;
+    position: relative; /* For absolute positioning of icon */
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-20px);
+    box-shadow: var(--shadow-medium);
+}
+
+.icon-box {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: var(--white);
+    position: absolute;
+    top: -35px; /* Half of icon's height to position it at the top edge */
+    left: 50%;
+    transform: translateX(-50%); /* Centering horizontally */
+    border: 5px solid var(--light-bg-color); /* Matches background color */
+    box-shadow: var(--shadow-light);
+}
+
+/* Specific icon background colors */
+.icon-seo { background-color: #FFD700; /* Gold */ }
+.icon-marketing { background-color: #20B2AA; /* Light Sea Green */ }
+.icon-campaign { background-color: #8A2BE2; /* Blue Violet */ }
+.icon-others { background-color: #FF6347; /* Tomato */ }
+
+.service-card h3 {
+    font-size: 1.4em;
+    margin-top: 20px; /* Space between icon and heading */
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 0.95em;
+    color: var(--dark-grey-text);
+}
+
+
+/* --- Responsive Design (Media Queries) --- */
+
+@media (max-width: 992px) {
+    .hero-section .container,
+    .simple-solutions-section .container,
+    .agency-section .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content, .solutions-content, .agency-content {
+        order: 2; /* Content below image on smaller screens */
+        text-align: center;
+    }
+
+    .hero-image, .solutions-image, .agency-image {
+        order: 1; /* Image above content on smaller screens */
+        margin-bottom: 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 3em;
+    }
+
+    .header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar ul {
+        margin-top: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .sign-up-btn {
+        margin-top: 20px;
+    }
+
+    .footer .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-col {
+        min-width: unset; /* Remove min-width for full flexibility */
+    }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 2em; }
+    h3 { font-size: 1.2em; }
+
+    .service-grid {
+        grid-template-columns: 1fr; /* Stack service cards vertically */
+    }
+
+    .solutions-buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center;
+    }
+
+    .testimonials-slider {
+        justify-content: center; /* Try to center cards if enough space */
+    }
+
+    .testimonial-card {
+        min-width: 85%; /* Make cards wider to fill space */
+    }
+}
+
+@media (max-width: 480px) {
+    .header .logo {
+        font-size: 24px;
+    }
+
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .navbar ul li {
+        margin: 0 10px; /* Reduce spacing between nav items */
+    }
+
+    .testimonial-card {
+        min-width: 95%; /* Almost full width */
+    }
+}
